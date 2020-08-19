@@ -1,4 +1,5 @@
 ## intent:faq/rasax
+- whats a [rasax](product)
 - what is [Rasa X](product) ?
 - how does [Rasa X](product) work?
 - what is [X](product) ?

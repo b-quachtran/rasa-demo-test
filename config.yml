@@ -12,7 +12,7 @@ pipeline:
   min_ngram: 1
   max_ngram: 4
 - name: DIETClassifier
-  epochs: 200
+  epochs: 10
   ranking_length: 5
 - name: DucklingHTTPExtractor
   url: http://localhost:8000
@@ -22,12 +22,15 @@ pipeline:
   - amount-of-money
 - name: EntitySynonymMapper
 - name: ResponseSelector
+  epochs: 10
   retrieval_intent: out_of_scope
   scale_loss: false
 - name: ResponseSelector
+  epochs: 10
   retrieval_intent: faq
   scale_loss: false
 - name: ResponseSelector
+  epochs: 10
   retrieval_intent: chitchat
   scale_loss: false
 policies:
