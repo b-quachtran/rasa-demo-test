@@ -1,4 +1,5 @@
 ## intent:affirm
+- Affirmative my dude
 - Accept
 - Awesome!
 - Good
