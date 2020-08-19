@@ -290,6 +290,7 @@
 - you good
 - Great information
 - I mean to say that I liked the explanation
+- You are the most awesomemest bot ever
 
 ## intent:bye
 - Bye
