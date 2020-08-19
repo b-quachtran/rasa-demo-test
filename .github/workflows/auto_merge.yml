@@ -15,8 +15,15 @@ on:
 
 jobs:
   # that's all. two steps are needed - if PR is mergeable according to
-  # branch protection rules, latest model file is trained & uploaded to Rasa X
-  # and it will be merged automatically
+  # branch protection rules it will be merged automatically
+  # and latest model file is trained & uploaded to Rasa X
+  mergepal:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: rasahq/merge-pal-action@v0.5.1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
   train-upload-model:
     name: Train and Upload Model to Rasa X
     runs-on: ubuntu-latest
@@ -51,10 +58,4 @@ jobs:
       run: |
         model_path=`ls models/*.tar.gz | head -n 1`
         curl -k -F "model=@${model_path}" "https://website-demo.rasa.com/api/projects/default/models?api_token=${RASA_X_API_TOKEN}"
-  mergepal:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: rasahq/merge-pal-action@v0.5.1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+
